@@ -1,0 +1,4 @@
+<CN>
+	<Property ID="string_player_1" Text="角色名" />
+	<Property ID="string_player_2" Text="等级：" />
+</CN>
