@@ -16,7 +16,7 @@ public class ViewManager : ISingleton<ViewManager>
     /// 打开界面
     /// </summary>
     /// <param name="uiName"></param>
-    public IView OpenUI<T>() where T : Component
+    public T OpenUI<T>() where T : IView
     {
         string name = typeof(T).ToString();
 
@@ -29,7 +29,7 @@ public class ViewManager : ISingleton<ViewManager>
 
         if (mViewsDic.ContainsKey(name))
         {
-            return mViewsDic[name];
+            return mViewsDic[name] as T;
         }
 
         GameObject prefab = Resources.Load("UI/UIPrefab/" + name) as GameObject;
@@ -54,7 +54,7 @@ public class ViewManager : ISingleton<ViewManager>
 
         mViewsDic.Add(name, view);
 
-        return view;
+        return view as T;
     }
 
     /// <summary>
