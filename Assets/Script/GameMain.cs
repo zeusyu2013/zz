@@ -32,6 +32,8 @@ public class GameMain : MonoBehaviour
         panel.Init();
 
         ADManager.Instance.ShowRewardedAd();
+
+        ObjectPoolManager.Instance.CreateObject(1);
     }
 
     void GetPlatform(string result)
