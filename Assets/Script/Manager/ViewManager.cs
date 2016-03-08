@@ -61,8 +61,9 @@ public class ViewManager : ISingleton<ViewManager>
     /// 关闭界面
     /// </summary>
     /// <param name="uiName"></param>
-    public void CloseUI(string uiName)
+    public void CloseUI<T>()
     {
+        string uiName = typeof(T).ToString();
         if (string.IsNullOrEmpty(uiName))
         {
             return;
