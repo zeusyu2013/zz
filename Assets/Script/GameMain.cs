@@ -28,8 +28,9 @@ public class GameMain : MonoBehaviour
     {
         ObjectManager.Instance.Clear();
 
-        LoadingUIPanel panel = ViewManager.Instance.OpenUI<LoadingUIPanel>();
-        panel.Init();
+        ViewManager.Instance.OpenUI<SettingsUIPanel>();
+//         LoadingUIPanel panel = ViewManager.Instance.OpenUI<LoadingUIPanel>();
+//         panel.Init();
 
         ADManager.Instance.ShowRewardedAd();
 
